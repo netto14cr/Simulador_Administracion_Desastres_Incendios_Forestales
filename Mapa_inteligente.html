@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+    Pagina web diseñada por: 
+    @Arelis Picado.
+    @Néstor Leiva.
+    
+    -->
+    <title>Admnistración de desastres</title>
+    <meta name="description" content="" />
+    <!-- templatemo 411 dragonfruit -->
+    <meta name="author" content="templatemo">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="./favicon.png" />		
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template  -->
+    <link href="css/templatemo_style.css" rel="stylesheet">
+
+	
+<!-- Codigo de Mapa inteligente -->
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="Javascript variables IOT/Mapa.js?1559698116191"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("5696DF9437F87D4380B44D053BEDCB47");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.Mapa();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	
+	
+	<!-- Animacion del mapa inteligente -->
+	
+	<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:100%; height:100%">
+		<canvas id="canvas" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100%; height:100%; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+    
+      <div id="capaNueva">
+          <br><br>
+        <h2 align="center">Mapa inteligente</h2>
+        <p id="texto">Los mapas inteligentes no solo pueden ser utilizados para determinar la cantidad de tráfico
+en una zona, sino también podría ser implementado para evitar incendios forestales, casi no
+se encuentran estudios que hablen en sí sobre mapas inteligentes, pero estudios que hablan
+sobre cámaras termográficas o sensores móviles que se encuentran cerca geográficamente de
+la zona de interés a verificar si hay incendios, si combinamos diversas tecnologías para
+realizar el mapa inteligente, sería una tecnología de gran ayuda a evitar los incendios
+forestales.
+</p>
+		<br>
+		<h2 align="center">Implementación:</h2>
+<p id="texto" >Un bosque va tener en áreas determinadas sensores
+de CO2 enviando información al centro de control, el cual dicha información será
+almacenada en el servidor, el cual mapa accederá a esa información y obtendrá una imagen
+satelital, a través de esa imagen podrá construir el mapa con diferentes colores según el nivel
+de radiación, por ejemplo:</p><br>
+	<div><img id="foto" src="images/nivel radiacion trabajo.PNG" width="25%" height="100%" alt=""/> </div>
+    <br><br>
+    
+<p id="texto" >Indicando cada color su nivel de peligro, dependiendo el peligro que hay la persona que esté
+en la sala de control podrá tomar una decisión al respecto, algunas decisiones que podrá tener
+la persona según el color serán las siguientes:
+<br><br>
+- Verde: No se tomará ninguna acción, debido a que se está fuera de peligro que se
+inicie un incendio.
+<br><br>
+- Amarillo: Pilotear un dron a la zona para verificar porque están subiendo los niveles
+de CO2, y verificar que no sea por un error del sensor.
+<br><br>
+- Anaranjado: Pilotear un dron a la zona para verificar lo que está pasando y además
+enviar un robot a la zona para mantenerlo ahí en caso de que se inicie fuego y
+extinguir el fuego de la manera más rápida, evitando así teniendo pérdidas mayores.
+<br><br>
+- Rojo: Enviar un robot a la zona para extinguir el fuego, además pilotear un dron para
+determinar la magnitud del incendio y ayudar al robot a extinguir el fuego.</p>
+<br><br>
+<a id="scrollUp" href="#top" style="position: absolute; display: block;"><i id="letra" aria-hidden="true">^</i></a>
+</div>
+
+<div id="templatemo_footer3">
+    <div>
+        <p id="footer">Copyright &copy; 2019 - <span id="currentYear">2019</span> Proyecto IOT Redes -  Administración de desastres: Incendios forestales</p>
+
+    </div>
+
+ </div> 
+    
+    
+
+      <!-- Menu movil-->
+        
+	</div>
+	<div id="templatemo_mobile_menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a rel="nofollow" href="index.html" class="external-link"> &nbsp; Inicio</a></li>
+			<li><a rel="nofollow" href="Topologia.html" class="external-link"> &nbsp; topología</a></li>
+            <li><a rel="nofollow" href="Robot.html" class="external-link"></i> &nbsp; Robot</a></li>
+            <li><a rel="nofollow" href="Dron.html" class="external-link"></i> &nbsp; Dron </a></li>
+            <li><a rel="nofollow" href="SensorC02.html" class="external-link"></i> &nbsp; Sensor de CO2</a></li>
+            <li><a rel="nofollow" href="Radiacion.html" class="external-link"></i> &nbsp; Sensor de Radiación</a></li>
+			<li><a rel="nofollow" href="Mapa_inteligente.html" class="external-link"></i> &nbsp; Mapa inteligente</a></li>
+        </ul>
+</div>
+
+<!-- Menu Pc-->
+<div class="container_wapper">
+    <div id="templatemo_banner_menu">
+        <div class="container-fluid">
+            <div class="col-xs-4 templatemo_logo">
+            	<a href="index.html">
+               	<img src="images/iconobosque.png" id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />
+                	<h1 id="logo_text">Administración de Desastres</span></h1>
+                </a>
+            </div>
+            <div class="col-sm-8 hidden-xs">
+                <ul class="nav nav-justified">
+                <li><a rel="nofollow" href="index.html" class="external-link">Inicio</a></li>
+                	<li><a rel="nofollow" href="Topologia.html" class="external-link">Topologia</a></li>
+					
+       <li><a rel="nofollow" href="Dron.html" class="external-link">Robot</a></li>
+					
+       <li><a rel="nofollow" href="Dron.html" class="external-link">Dron</a></li>  
+					
+       <li><a rel="nofollow" href="SensorC02.html" class="external-link">CO2</a></li>
+                    
+   <li><a rel="nofollow" href="Radiacion.html" class="external-link">Radiación</a></li>
+                                    
+       <li><a href="#canvas">Mapa inteligente</a></li>
+                 
+                 </ul>
+            </div>
+            <div class="col-xs-8 visible-xs">
+                <a href="#" id="mobile_menu"><span class="glyphicon glyphicon-th-list"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="js/updateYear.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.singlePageNav.min.js"></script>
+<script src="js/unslider.min.js"></script>
+<script src="js/templatemo_script.js"></script>
+</body>
+</html>

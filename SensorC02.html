@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+    Pagina web diseñada por: 
+    @Arelis Picado.
+    @Néstor Leiva.
+    
+    -->
+    <title>Admnistración de desastres</title>
+    <meta name="description" content="" />
+    <!-- templatemo 411 dragonfruit -->
+    <meta name="author" content="templatemo">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="./favicon.png" />		
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template  -->
+    <link href="css/templatemo_style.css" rel="stylesheet">
+
+
+<!-- Codigo Sensor CO2 -->
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="Javascript variables IOT/Sensor_CO2.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("C020EA473584F54FA0C85A62562A21AA");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.Sensor_CO2();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+	  
+	
+<!-- write your code here -->
+</head>
+	
+	<!-- Animacion de Sensor CO2 -->
+	
+  <body onload="init();" style="margin:0px;">
+      <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:100%; height:100%">
+          <canvas id="canvas" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+          <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100%; height:100%; position: absolute; left: 0px; top: 0px; display: block;">
+          </div>
+      </div>
+
+      
+
+      <div id="capaNueva">
+          <br><br><br>
+          <h2 align="center">Sensor de CO2</h2>
+          <p id="texto">
+              Los sensores de CO2 miden la concentración del dióxido de carbono en partes por millón
+              (ppm), la funcionalidad de este sensor según ITP Software “el elemento sensible al CO2
+              es un electrolito sólido formado por dos electrodos, unidos con un sustrato impreso de
+              calentamiento (dióxido de rutenio, RuO2). Mediante el monitoreo de la variación en la fuerza
+              electromotriz (FEM) generada entre ambos electrodos, es posible medir la concentración del
+              gas CO2.
+          </p>
+          <br>
+          <h2 align="center">Implementación:</h2>
+          <p id="texto">
+              Se necesita cubrir cada
+              cincuenta metros cuadrados del bosque con sensores de CO2 para obtener una respuesta
+              rápida (aproximadamente de cinco minutos), desde el momento en que se inició el fuego y
+              así evitar pérdidas tanto de vegetación como de vidas humanas en caso de estar cerca de un
+              pueblo. Además, la información que suministra estos sensores llegará a un router a través
+              de una señal inalámbrica, el cual el router enviará los datos a un servidor que podrá almacenar
+              en la nube, para que los dispositivos finales (computadoras) puedan consultar esta
+              información, la cual revisará y analizará los niveles de concentración de CO2 para determinar
+              si son altos e intervenir con el incendio iniciado.
+
+
+
+          </p>
+          <br><br>
+          <a id="scrollUp" href="#top" style="position: absolute; display: block;"><i id="letra" aria-hidden="true">^</i></a>
+      </div>
+
+      <div id="templatemo_footer3">
+          <div>
+              <p id="footer">Copyright &copy; 2019 - <span id="currentYear">2019</span> Proyecto IOT Redes -  Administración de desastres: Incendios forestales</p>
+          </div>
+
+      </div>
+
+
+
+
+
+      <!-- Menu movil-->
+      </div>
+      <div id="templatemo_mobile_menu">
+          <ul class="nav nav-pills nav-stacked">
+              <li><a rel="nofollow" href="index.html" class="external-link"> &nbsp; Inicio</a></li>
+              <li><a rel="nofollow" href="Topologia.html" class="external-link"> &nbsp; Topología</a></li>
+              <li><a rel="nofollow" href="Robot.html" class="external-link"></i> &nbsp; Robot</a></li>
+              <li><a rel="nofollow" href="Dron.html" class="external-link"></i> &nbsp; Dron </a></li>
+              <li><a rel="nofollow" href="SensorC02.html" class="external-link"></i> &nbsp; Sensor de CO2</a></li>
+              <li><a rel="nofollow" href="Radiacion.html" class="external-link"></i> &nbsp; Sensor de Radiación</a></li>
+              <li><a rel="nofollow" href="Mapa_inteligente.html" class="external-link"></i> &nbsp; Mapa inteligente</a></li>
+          </ul>
+      </div>
+
+      <!-- Menu Pc-->
+      <div class="container_wapper">
+          <div id="templatemo_banner_menu">
+              <div class="container-fluid">
+                  <div class="col-xs-4 templatemo_logo">
+                      <a href="index.html">
+                          <img src="images/iconobosque.png" id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />
+                          <h1 id="logo_text">Administración de Desastres</span></h1>
+                      </a>
+                  </div>
+                  <div class="col-sm-8 hidden-xs">
+                      <ul class="nav nav-justified">
+                          <li><a rel="nofollow" href="index.html" class="external-link">Inicio</a></li>
+                          <li><a rel="nofollow" href="Topologia.html" class="external-link">Topología</a></li>
+
+                          <li><a rel="nofollow" href="Robot.html" class="external-link">Robot</a></li>
+
+                          <li><a rel="nofollow" href="Dron.html" class="external-link">Dron</a></li>
+
+                          <li><a rel="nofollow" href="#canvas" class="external-link">CO2</a></li>
+
+                          <li><a rel="nofollow" href="Radiacion.html" class="external-link">Radiación</a></li>
+
+
+                          <li><a rel="nofollow" href="Mapa_inteligente.html" class="external-link">Mapa inteligente</a></li>
+
+                      </ul>
+                  </div>
+                  <div class="col-xs-8 visible-xs">
+                      <a href="#" id="mobile_menu"><span class="glyphicon glyphicon-th-list"></span></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <script src="js/updateYear.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.singlePageNav.min.js"></script>
+      <script src="js/unslider.min.js"></script>
+      <script src="js/templatemo_script.js"></script>
+  </body>
+</html>
