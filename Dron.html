@@ -22,59 +22,11 @@
     <!-- Template  -->
     <link href="css/templatemo_style.css" rel="stylesheet">
 
-	  
-	  
-	  
-<!-- Codigo de Dron -->
 
-<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="Javascript variables IOT/Dron.js"></script>
-<script>
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-function init() {
-	canvas = document.getElementById("canvas");
-	anim_container = document.getElementById("animation_container");
-	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("09C87B9C54A65D4F8BFCF328CCD5C9A4");
-	var lib=comp.getLibrary();
-	var loader = new createjs.LoadQueue(false);
-	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
-	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
-	var lib=comp.getLibrary();
-	loader.loadManifest(lib.properties.manifest);
-}
-function handleFileLoad(evt, comp) {
-	var images=comp.getImages();	
-	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
-}
-function handleComplete(evt,comp) {
-	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib=comp.getLibrary();
-	var ss=comp.getSpriteSheet();
-	var queue = evt.target;
-	var ssMetadata = lib.ssMetadata;
-	for(i=0; i<ssMetadata.length; i++) {
-		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
-	}
-	exportRoot = new lib.Dron();
-	stage = new lib.Stage(canvas);
-	stage.enableMouseOver();	
-	//Registers the "tick" event listener.
-	fnStartAnimation = function() {
-		stage.addChild(exportRoot);
-		createjs.Ticker.setFPS(lib.properties.fps);
-		createjs.Ticker.addEventListener("tick", stage);
-	}	    
-	//Code to support hidpi screens and responsive scaling.
-	AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(lib.properties.id);
-	fnStartAnimation();
-}
-</script>
 	  
 	  
-	  
-	  
+
+
 <!-- write your code here -->
 </head>
 	<!-- Animacion de Dron -->
@@ -114,24 +66,12 @@ nube, y el dron poder accesar a esta información poder accesar a esta informaci
         <p id="footer">Copyright &copy; 2019 - <span id="currentYear">2019</span> Proyecto IOT Redes -  Administración de desastres: Incendios forestales</p>
     </div>
 
- </div> 
+ </div>
 
 
 
-      <!-- Menu movil-->
-        
-	</div>
-	<div id="templatemo_mobile_menu">
-        <ul class="nav nav-pills nav-stacked">
-            <li><a rel="nofollow" href="index.html" class="external-link"> &nbsp; Inicio</a></li>
-			<li><a rel="nofollow" href="Topologia.html" class="external-link"> &nbsp; Topología</a></li>
-            <li><a rel="nofollow" href="Robot.html" class="external-link"></i> &nbsp; Robot</a></li>
-            <li><a rel="nofollow" href="Dron.html" class="external-link"></i> &nbsp; Dron </a></li>
-            <li><a rel="nofollow" href="SensorC02.html" class="external-link"></i> &nbsp; Sensor de CO2</a></li>
-            <li><a rel="nofollow" href="Radiacion.html" class="external-link"></i> &nbsp; Sensor de Radiación</a></li>
-			<li><a rel="nofollow" href="Mapa_inteligente.html" class="external-link"></i> &nbsp; Mapa inteligente</a></li>
-        </ul>
-</div>
+
+
 
 <!-- Menu Pc-->
 <div class="container_wapper">
@@ -147,17 +87,17 @@ nube, y el dron poder accesar a esta información poder accesar a esta informaci
                 <ul class="nav nav-justified">
                 <li><a rel="nofollow" href="index.html" class="external-link">Inicio</a></li>
                 	<li><a rel="nofollow" href="Topologia.html" class="external-link">Topología</a></li>
-					
-       <li><a rel="nofollow" href="Robot.html" class="external-link">Robot</a></li>                      
-					
+
+       <li><a rel="nofollow" href="Robot.html" class="external-link">Robot</a></li>
+
        <li><a rel="nofollow" href="#canvas">Dron</a></li>
-					
+
        <li><a rel="nofollow" href="SensorC02.html" class="external-link">CO2</a></li>
-                    
+
    <li><a rel="nofollow" href="Radiacion.html" class="external-link">Radiación</a></li>
-                     
+
        <li><a rel="nofollow" href="Mapa_inteligente.html" class="external-link">Mapa inteligente</a></li>
-                 
+
                  </ul>
             </div>
             <div class="col-xs-8 visible-xs">
@@ -174,5 +114,11 @@ nube, y el dron poder accesar a esta información poder accesar a esta informaci
 <script src="js/jquery.singlePageNav.min.js"></script>
 <script src="js/unslider.min.js"></script>
 <script src="js/templatemo_script.js"></script>
+
+
+    <!-- Codigo de Dron -->
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="animaciones_IOT/Dron.js"></script>
+    <script src="js/frame_dron.js"></script>
 </body>
 </html>

@@ -3,10 +3,10 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"Sensor_CO2_atlas_", frames: [[0,0,2000,2000]]},
-		{name:"Sensor_CO2_atlas_2", frames: [[0,0,1920,1200]]},
-		{name:"Sensor_CO2_atlas_3", frames: [[1540,502,400,400],[1038,1004,612,385],[1666,1439,350,200],[0,1644,400,400],[1666,904,333,264],[1038,1391,626,306],[1520,1699,251,320],[1773,1641,256,256],[524,1002,512,512],[524,1516,512,512],[1038,1699,480,269],[0,1002,522,640],[1666,1170,300,267],[1002,0,800,500],[0,0,1000,1000],[1038,502,500,500]]},
-		{name:"Sensor_CO2_atlas_4", frames: [[555,0,225,225],[258,0,295,173],[258,175,232,160],[0,492,850,4],[614,227,385,4],[0,0,256,256],[782,0,225,225],[492,227,120,263]]}
+		{name:"Radiacion_atlas_", frames: [[0,0,2000,2000]]},
+		{name:"Radiacion_atlas_2", frames: [[0,0,1920,1200]]},
+		{name:"Radiacion_atlas_3", frames: [[1071,1530,612,385],[802,1156,626,306],[1002,642,512,512],[557,1504,512,512],[1002,0,522,640],[0,1002,800,500],[1526,0,512,512],[0,0,1000,1000],[0,1504,555,526],[1526,514,512,512],[1516,1028,500,500]]},
+		{name:"Radiacion_atlas_4", frames: [[0,703,350,200],[0,271,333,264],[352,703,250,209],[604,738,295,173],[784,0,232,160],[335,271,256,256],[0,914,850,4],[0,920,385,4],[0,537,456,164],[0,0,480,269],[593,269,256,256],[482,0,300,267],[604,527,250,209],[851,162,120,263]]}
 ];
 
 
@@ -14,184 +14,191 @@ lib.ssMetadata = [
 
 
 
-(lib.alerta_fuego = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(0);
-}).prototype = p = new cjs.Sprite();
-
-
-
 (lib.bosquefondo100 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(1);
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.BotonSENSORSIMULACION2 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(2);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.copiaalerta_fuego = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(3);
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.copiaedificioderecencipon = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(4);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.copiasenorco2nuevo = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
-	this.gotoAndStop(0);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.cuidad2 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(5);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.escueladeinformaticalogo = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
+	this.initialize(ss["Radiacion_atlas_4"]);
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.fondocafe = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
+(lib.copiasensorradiacionarregaldo = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
+(lib.cuidad2 = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(1);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.escueladeinformaticalogo = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(3);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.fondocafe = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(4);
+}).prototype = p = new cjs.Sprite();
+
+
+
 (lib.fondo_oscuro = function() {
-	this.initialize(ss["Sensor_CO2_atlas_2"]);
+	this.initialize(ss["Radiacion_atlas_2"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.humo1 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(6);
-}).prototype = p = new cjs.Sprite();
-
-
-
 (lib.internet = function() {
-	this.initialize(ss["Sensor_CO2_atlas_"]);
+	this.initialize(ss["Radiacion_atlas_"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.llamas1 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(7);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.llamas2 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(8);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.llamas3 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(9);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.Mapadebits76 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
-	this.gotoAndStop(3);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.Mapadebits77 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
-	this.gotoAndStop(4);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.nubeservidor = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(10);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.pinos1 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
+	this.initialize(ss["Radiacion_atlas_4"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.pinos3 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(11);
+(lib.llamas2 = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.routerwirelesicono = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(12);
+(lib.llamas3 = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.senorco2nuevo = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
+(lib.Mapadebits76 = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.SNESORCO2LETRA = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(13);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.sobretrnasparente = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(14);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.torreanimada_0 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_4"]);
+(lib.Mapadebits77 = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
 
 
+(lib.nivelsradiacion = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(8);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.nubeservidor = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(9);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.pinos1 = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(10);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.pinos3 = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(4);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.RADIACIONLETRA = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(5);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.rayosuv = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(6);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.routerwirelesicono = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(11);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.sensorradiacionarregaldo = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(12);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.sobretrnasparente = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(7);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.sol = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(8);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.torreanimada_0 = function() {
+	this.initialize(ss["Radiacion_atlas_4"]);
+	this.gotoAndStop(13);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.UV = function() {
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(9);
+}).prototype = p = new cjs.Sprite();
+
+
+
 (lib.wificolor_0 = function() {
-	this.initialize(ss["Sensor_CO2_atlas_3"]);
-	this.gotoAndStop(15);
+	this.initialize(ss["Radiacion_atlas_3"]);
+	this.gotoAndStop(10);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -225,6 +232,19 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 }).prototype = getMCSymbolPrototype(lib.Símbolo1, new cjs.Rectangle(-88.5,-60,177.1,120), null);
 
 
+(lib.sol_1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Capa_1
+	this.instance = new lib.sol();
+	this.instance.parent = this;
+	this.instance.setTransform(0,0,0.2703,0.2288);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.sol_1, new cjs.Rectangle(0,0,150,120.4), null);
+
+
 (lib.sobre = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -245,17 +265,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 }).prototype = getMCSymbolPrototype(lib.sobre, new cjs.Rectangle(-21,0,123.2,94.4), null);
 
 
-(lib.humo = function(mode,startPosition,loop) {
+(lib.rayosvvv = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Capa_1
-	this.instance = new lib.humo1();
+	this.instance = new lib.rayosuv();
 	this.instance.parent = this;
-	this.instance.setTransform(161.4,0,0.643,0.4061,0,0,180);
+	this.instance.setTransform(135.9,236.1,0.3402,0.3183,-141.2887);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.humo, new cjs.Rectangle(0,0,161.4,130), null);
+}).prototype = getMCSymbolPrototype(lib.rayosvvv, new cjs.Rectangle(0,0,237.8,236.1), null);
 
 
 (lib.fuego1 = function(mode,startPosition,loop) {
@@ -318,7 +338,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 
 
 // stage content:
-(lib.Sensor_CO2 = function(mode,startPosition,loop) {
+(lib.Sensor_radiación = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{init:91});
 
 	// timeline functions:
@@ -417,75 +437,70 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_6},{t:this.text_2},{t:this.instance_5}]},277).wait(48));
 
-	// abol_jaja
-	this.instance_7 = new lib.pinos3();
+	// escala
+	this.instance_7 = new lib.nivelsradiacion();
 	this.instance_7.parent = this;
-	this.instance_7.setTransform(612,261,0.8698,0.7314);
+	this.instance_7.setTransform(278,489,0.5704,0.8049);
 	this.instance_7._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(91).to({_off:false},0).to({_off:true},156).wait(78));
+	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(102).to({_off:false},0).to({_off:true},145).wait(78));
+
+	// abol_jaja
+	this.instance_8 = new lib.pinos3();
+	this.instance_8.parent = this;
+	this.instance_8.setTransform(-112,253,0.831,0.6553);
+
+	this.instance_9 = new lib.pinos3();
+	this.instance_9.parent = this;
+	this.instance_9.setTransform(612,261,0.8698,0.7314);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_9},{t:this.instance_8}]},91).to({state:[]},156).to({state:[]},1).wait(77));
 
 	// mensaje3
-	this.instance_8 = new lib.sobre();
-	this.instance_8.parent = this;
-	this.instance_8.setTransform(447.25,555.8,0.541,1,0,0,0,40.6,47.2);
-	this.instance_8._off = true;
+	this.instance_10 = new lib.sobre();
+	this.instance_10.parent = this;
+	this.instance_10.setTransform(824,261.85,0.541,0.5763,0,0,0,40.6,47.3);
+	this.instance_10._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_8).wait(207).to({_off:false},0).to({scaleX:0.7679,x:937.55,y:157.2},13).to({x:608.25,y:111.8},14).to({x:352.7,y:94.05},12).to({_off:true},1).wait(78));
+	this.timeline.addTween(cjs.Tween.get(this.instance_10).wait(207).to({_off:false},0).to({regY:47.2,scaleX:0.7679,scaleY:1,x:937.55,y:157.2},13).to({x:608.25,y:111.8},14).to({x:352.7,y:94.05},12).to({_off:true},1).wait(78));
 
 	// señal3
-	this.instance_9 = new lib.copiaalerta_fuego();
-	this.instance_9.parent = this;
-	this.instance_9.setTransform(212,501,0.3,0.255);
-
-	this.instance_10 = new lib.wificolor_0();
-	this.instance_10.parent = this;
-	this.instance_10.setTransform(332,450,0.2402,0.2042);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_10},{t:this.instance_9}]},207).to({state:[]},40).to({state:[]},1).wait(77));
-
-	// humo_3
-	this.instance_11 = new lib.humo();
+	this.instance_11 = new lib.UV();
 	this.instance_11.parent = this;
-	this.instance_11.setTransform(641.5,494.55,0.958,1.6696,0,0,180,80.9,65);
-	this.instance_11._off = true;
+	this.instance_11.setTransform(804,228,0.3826,0.4023);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_11).wait(207).to({_off:false},0).to({regX:80.8,scaleX:2.0253,scaleY:2.3605,x:672.25,y:454.45},13).to({regY:65.1,scaleX:2.6209,scaleY:3.1588,y:398.15},14).to({scaleY:3.3584,skewX:-14.9991,skewY:165.001,x:627.65,y:396},12).to({_off:true},1).wait(78));
+	this.instance_12 = new lib.wificolor_0();
+	this.instance_12.parent = this;
+	this.instance_12.setTransform(788,176,0.1842,0.2042);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_12},{t:this.instance_11}]},207).to({state:[]},40).to({state:[]},1).wait(77));
 
 	// fuego3
-	this.instance_12 = new lib.fuego2222();
-	this.instance_12.parent = this;
-	this.instance_12.setTransform(639.85,599.35,1.1536,1.7257,0,0,0,37.6,29.4);
-	this.instance_12._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_12).wait(195).to({_off:false},0).to({regY:29.5,scaleX:2.3256,scaleY:2.88,x:665.35,y:576.75},25).to({regY:29.6,scaleX:3.5457,scaleY:4.3031,y:544.3},26).to({_off:true},1).wait(78));
-
-	// Capa_59
-	this.instance_13 = new lib.sobre();
+	this.instance_13 = new lib.fuego2222();
 	this.instance_13.parent = this;
-	this.instance_13.setTransform(685.4,275.2,0.5455,1,0,0,0,40.6,47.2);
+	this.instance_13.setTransform(639.85,599.35,1.1536,1.7257,0,0,0,37.6,29.4);
 	this.instance_13._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_13).wait(156).to({_off:false},0).to({x:917.3,y:180.8},16).to({x:721.6,y:111.8},23).to({x:418.5},25).to({regY:67.2,x:280.6,y:5.3},26).to({_off:true},1).wait(78));
+	this.timeline.addTween(cjs.Tween.get(this.instance_13).wait(195).to({_off:false},0).to({regY:29.5,scaleX:2.3256,scaleY:2.88,x:665.35,y:576.75},25).to({regY:29.6,scaleX:3.5457,scaleY:4.3031,y:544.3},26).to({_off:true},1).wait(78));
+
+	// Capa_59
+	this.instance_14 = new lib.sobre();
+	this.instance_14.parent = this;
+	this.instance_14.setTransform(685.4,275.2,0.5455,1,0,0,0,40.6,47.2);
+	this.instance_14._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_14).wait(156).to({_off:false},0).to({x:917.3,y:180.8},16).to({x:721.6,y:111.8},23).to({x:418.5},25).to({regY:67.2,x:280.6,y:5.3},26).to({_off:true},1).wait(78));
 
 	// señal2
-	this.instance_14 = new lib.copiaalerta_fuego();
-	this.instance_14.parent = this;
-	this.instance_14.setTransform(590,365,0.2403,0.2401);
-
-	this.instance_15 = new lib.wificolor_0();
+	this.instance_15 = new lib.UV();
 	this.instance_15.parent = this;
-	this.instance_15.setTransform(632,275,0.1082,0.1323);
+	this.instance_15.setTransform(523,178,0.2232,0.2209);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_15},{t:this.instance_14}]},156).to({state:[]},91).to({state:[]},1).wait(77));
-
-	// humo2
-	this.instance_16 = new lib.humo();
+	this.instance_16 = new lib.wificolor_0();
 	this.instance_16.parent = this;
-	this.instance_16.setTransform(873.95,287,1.2811,1.9692,0,0,180,80.8,65);
-	this.instance_16._off = true;
+	this.instance_16.setTransform(632,275,0.1082,0.1323);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_16).wait(156).to({_off:false},0).to({regX:80.7,scaleX:1.6023,scaleY:1.8537,x:936.7,y:340.65},16).to({regX:80.8,regY:65.2,scaleX:2.0811,scaleY:2.532,skewX:-19.4496,skewY:160.5503,x:901.1,y:341.1},23).to({scaleX:1.5129,skewX:-6.7416,skewY:173.259,x:907.45,y:308.65},25).to({regX:80.9,regY:65.1,scaleX:1.5128,scaleY:2.5319,skewX:27.2095,skewY:207.2096,x:957,y:361.3},26).to({_off:true},1).wait(78));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_16},{t:this.instance_15}]},156).to({state:[]},91).to({state:[]},1).wait(77));
 
 	// fuego2
 	this.instance_17 = new lib.fuego2222();
@@ -498,72 +513,76 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 	// mensaje1
 	this.instance_18 = new lib.sobre();
 	this.instance_18.parent = this;
-	this.instance_18.setTransform(191.65,265,0.4162,1,0,0,0,40.8,47.2);
+	this.instance_18.setTransform(128.75,351.2,0.4162,1,0,0,0,40.8,47.2);
 	this.instance_18._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_18).wait(102).to({_off:false},0).to({regY:47.3,scaleX:0.6366,x:118.9,y:172.3},15).to({x:360.9,y:206.3},21).to({regX:40.6,regY:47.4,x:641,y:129},17).to({x:406.2,y:121},17).to({x:286.2,y:3.05},23).to({_off:true},1).wait(129));
+	this.timeline.addTween(cjs.Tween.get(this.instance_18).wait(102).to({_off:false},0).to({regY:47.3,scaleX:0.6366,x:63.9,y:172.3},15).to({x:360.9,y:206.3},21).to({regX:40.6,regY:47.4,x:641,y:129},17).to({x:406.2,y:121},17).to({x:286.2,y:3.05},23).to({_off:true},1).wait(129));
+
+	// sol
+	this.instance_19 = new lib.sol_1();
+	this.instance_19.parent = this;
+	this.instance_19.setTransform(885,58.1,1,1,0,0,0,75,60.1);
+	this.instance_19._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(91).to({_off:false},0).to({scaleY:1.1888,rotation:-44.9995,x:884.9,y:58},26).to({rotation:-89.9993},21).to({regX:74.9,regY:60.2,scaleX:0.9999,scaleY:1.4226,rotation:-134.9987,x:884.95},25).to({regY:60.1,rotation:-164.998,x:884.9,y:58.05},24).to({regX:74.8,regY:60.2,scaleX:1.2052,scaleY:1.4912,rotation:-179.9977,x:885,y:57.95},25).to({regY:60.1,scaleY:1.4911,rotation:-231.4771,x:885.1,y:58.05},34).to({_off:true},1).wait(78));
+
+	// rayos_V
+	this.instance_20 = new lib.rayosvvv();
+	this.instance_20.parent = this;
+	this.instance_20.setTransform(841.6,115.8,1,1,0,0,0,118.9,118);
+	this.instance_20._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_20).wait(91).to({_off:false},0).to({regX:119,scaleX:1.1842,scaleY:1.2296,rotation:-14.9987,x:841.7,y:115.75},26).to({regY:118.1,scaleX:1.3081,scaleY:1.6269,rotation:0,x:841.75,y:116.05},21).to({regY:118,rotation:-14.9988,y:115.85},25).to({regY:118.1,scaleX:1.0423,scaleY:1.263,rotation:-25.2431,x:841.85,y:115.95},24).to({regY:118.2,scaleX:1.4801,scaleY:1.6194,rotation:-25.2426,x:841.9,y:116.1},25).to({regY:118.3,scaleX:1.2245,scaleY:1.4696,rotation:-10.2428,x:841.95,y:116.3},34).to({_off:true},1).wait(78));
 
 	// alerta1
-	this.instance_19 = new lib.alerta_fuego();
-	this.instance_19.parent = this;
-	this.instance_19.setTransform(119,321,0.1903,0.1703);
-
-	this.instance_20 = new lib.wificolor_0();
-	this.instance_20.parent = this;
-	this.instance_20.setTransform(189,265,0.1478,0.1122);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_20},{t:this.instance_19}]},102).to({state:[]},145).wait(78));
-
-	// humo1
-	this.instance_21 = new lib.humo();
+	this.instance_21 = new lib.UV();
 	this.instance_21.parent = this;
-	this.instance_21.setTransform(286.7,341,1,1,0,0,0,80.7,65);
-	this.instance_21._off = true;
+	this.instance_21.setTransform(124,217,0.3007,0.2884);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_21).wait(102).to({_off:false},0).to({scaleX:1.5948,scaleY:1.739,y:341.1},15).to({regX:80.8,regY:65.1,scaleX:1.3535,scaleY:2.1711,x:270.05,y:369.35},15).to({regY:65.2,scaleX:2.0831,scaleY:2.6013,x:271.3,y:331.35},13).to({regX:80.9,rotation:22.2319,x:303.45,y:330.75},27).to({rotation:-27.4746,x:258.75,y:386.8},23).to({scaleY:2.6012,rotation:17.5245,x:330.65,y:314.5},25).to({regX:80.8,regY:65.3,scaleX:1.855,scaleY:2.7398,rotation:-20.9272,x:266.25,y:314.55},26).to({_off:true},1).wait(78));
+	this.instance_22 = new lib.wificolor_0();
+	this.instance_22.parent = this;
+	this.instance_22.setTransform(66,309,0.1478,0.1122);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_22},{t:this.instance_21}]},102).to({state:[]},145).wait(78));
 
 	// fuego1
-	this.instance_22 = new lib.fuego2222();
-	this.instance_22.parent = this;
-	this.instance_22.setTransform(307.45,406.3,1,1,0,0,0,37.5,29.4);
-	this.instance_22._off = true;
+	this.instance_23 = new lib.fuego2222();
+	this.instance_23.parent = this;
+	this.instance_23.setTransform(307.45,406.3,1,1,0,0,0,37.5,29.4);
+	this.instance_23._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_22).wait(91).to({_off:false},0).to({scaleX:2.1733,scaleY:2.3605,x:318.5,y:404.4},26).to({regX:37.6,scaleX:2.9731,scaleY:3.1809,x:360.75,y:406.4},28).to({rotation:-14.9991,y:406.45},27).to({rotation:15.0001,x:360.85,y:406.55},23).to({rotation:-14.9991,x:360.75,y:406.5},25).to({scaleX:2.973,scaleY:3.1808,rotation:15.0001,x:360.9,y:406.6},26).to({_off:true},1).wait(78));
+	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(91).to({_off:false},0).to({scaleX:2.1733,scaleY:2.3605,x:318.5,y:404.4},26).to({regX:37.6,scaleX:2.9731,scaleY:3.1809,x:360.75,y:406.4},28).to({rotation:-14.9991,y:406.45},27).to({rotation:15.0001,x:360.85,y:406.55},23).to({rotation:-14.9991,x:360.75,y:406.5},25).to({scaleX:2.973,scaleY:3.1808,rotation:15.0001,x:360.9,y:406.6},26).to({_off:true},1).wait(78));
 
 	// sensores
-	this.instance_23 = new lib.copiasenorco2nuevo();
-	this.instance_23.parent = this;
-	this.instance_23.setTransform(612,335,0.4756,0.3779);
-
-	this.instance_24 = new lib.copiasenorco2nuevo();
+	this.instance_24 = new lib.copiasensorradiacionarregaldo();
 	this.instance_24.parent = this;
-	this.instance_24.setTransform(195,321,0.3333,0.3779);
+	this.instance_24.setTransform(216.8,304,0.7712,0.883,0,0,180);
 
-	this.instance_25 = new lib.copiasenorco2nuevo();
+	this.instance_25 = new lib.copiasensorradiacionarregaldo();
 	this.instance_25.parent = this;
-	this.instance_25.setTransform(345,529,0.4756,0.5378);
+	this.instance_25.setTransform(601,301,0.5302,0.5302);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_25},{t:this.instance_24},{t:this.instance_23}]},91).to({state:[]},156).to({state:[]},1).wait(77));
+	this.instance_26 = new lib.copiasensorradiacionarregaldo();
+	this.instance_26.parent = this;
+	this.instance_26.setTransform(906.1,228,0.5763,0.512,0,0,180);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_26},{t:this.instance_25},{t:this.instance_24}]},91).to({state:[]},156).to({state:[]},1).wait(77));
 
 	// torres
-	this.instance_26 = new lib.torreanimada_0();
-	this.instance_26.parent = this;
-	this.instance_26.setTransform(-17,110,1,0.8555);
-
 	this.instance_27 = new lib.torreanimada_0();
 	this.instance_27.parent = this;
-	this.instance_27.setTransform(906,110,1,0.8023);
+	this.instance_27.setTransform(-17,110,1,0.8555);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_27},{t:this.instance_26}]},91).to({state:[]},156).to({state:[]},1).wait(77));
+	this.instance_28 = new lib.torreanimada_0();
+	this.instance_28.parent = this;
+	this.instance_28.setTransform(906,110,1,0.8023);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_28},{t:this.instance_27}]},91).to({state:[]},156).to({state:[]},1).wait(77));
 
 	// arboles
-	this.instance_28 = new lib.pinos3();
-	this.instance_28.parent = this;
-	this.instance_28.setTransform(247,228,0.1879,0.2142);
-
 	this.instance_29 = new lib.pinos3();
 	this.instance_29.parent = this;
-	this.instance_29.setTransform(-93,301,0.655,0.5625);
+	this.instance_29.setTransform(247,228,0.1879,0.2142);
 
 	this.instance_30 = new lib.pinos3();
 	this.instance_30.parent = this;
@@ -581,12 +600,12 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 	this.instance_33.parent = this;
 	this.instance_33.setTransform(824,261,0.85,0.7376);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_33},{t:this.instance_32},{t:this.instance_31},{t:this.instance_30},{t:this.instance_29},{t:this.instance_28}]},91).to({state:[]},156).to({state:[]},1).wait(77));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_33},{t:this.instance_32},{t:this.instance_31},{t:this.instance_30},{t:this.instance_29}]},91).to({state:[]},156).to({state:[]},1).wait(77));
 
 	// router_inalabrico
 	this.instance_34 = new lib.routerwirelesicono();
 	this.instance_34.parent = this;
-	this.instance_34.setTransform(582,0,0.5065,0.5955);
+	this.instance_34.setTransform(449,0,0.5065,0.5955);
 	this.instance_34._off = true;
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_34).wait(91).to({_off:false},0).to({_off:true},156).wait(78));
@@ -594,17 +613,17 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 	// seevidor
 	this.instance_35 = new lib.Mapadebits77();
 	this.instance_35.parent = this;
-	this.instance_35.setTransform(400,121,0.626,1);
+	this.instance_35.setTransform(349,121,0.4908,1);
 
 	this.text_3 = new cjs.Text("NUBE", "23px 'Times New Roman'", "#FFFFFF");
 	this.text_3.lineHeight = 28;
 	this.text_3.lineWidth = 352;
 	this.text_3.parent = this;
-	this.text_3.setTransform(346.95,96.05);
+	this.text_3.setTransform(309,96.05);
 
 	this.instance_36 = new lib.nubeservidor();
 	this.instance_36.parent = this;
-	this.instance_36.setTransform(189,-17,0.775,0.7174);
+	this.instance_36.setTransform(151,-17,0.775,0.7174);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_36},{t:this.text_3},{t:this.instance_35}]},91).to({state:[]},156).to({state:[]},1).wait(77));
 
@@ -627,12 +646,12 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 	this.timeline.addTween(cjs.Tween.get(this.button_3).wait(14).to({_off:false},0).wait(76).to({x:111.4,y:411},0).to({_off:true},1).wait(234));
 
 	// Letra_fondo_inicio
-	this.instance_38 = new lib.SNESORCO2LETRA();
+	this.instance_38 = new lib.RADIACIONLETRA();
 	this.instance_38.parent = this;
-	this.instance_38.setTransform(227,-35,0.6851,0.6164);
+	this.instance_38.setTransform(147,-113,0.935,1.1518);
 	this.instance_38._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_38).wait(7).to({_off:false},0).to({_off:true},84).wait(234));
+	this.timeline.addTween(cjs.Tween.get(this.instance_38).wait(14).to({_off:false},0).to({_off:true},77).wait(234));
 
 	// Logo_una
 	this.instance_39 = new lib.escueladeinformaticalogo();
@@ -643,9 +662,9 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 	this.timeline.addTween(cjs.Tween.get(this.instance_39).wait(6).to({_off:false},0).to({_off:true},85).wait(234));
 
 	// imagen_fondo_robot
-	this.instance_40 = new lib.senorco2nuevo();
+	this.instance_40 = new lib.sensorradiacionarregaldo();
 	this.instance_40.parent = this;
-	this.instance_40.setTransform(351,273,1.3384,1.1136);
+	this.instance_40.setTransform(272,228,1.8316,1.5163);
 	this.instance_40._off = true;
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_40).wait(14).to({_off:false},0).to({_off:true},77).wait(234));
@@ -658,20 +677,20 @@ p.nominalBounds = new cjs.Rectangle(0,0,177.2,120);
 	this.timeline.addTween(cjs.Tween.get(this.instance_41).to({_off:true},91).wait(234));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(407,245.2,734.2,483.90000000000003);
+p.nominalBounds = new cjs.Rectangle(388,193,694.4000000000001,536.1);
 // library properties:
 lib.properties = {
-	id: 'C020EA473584F54FA0C85A62562A21AA',
+	id: 'E273292B2A50EB4AAD95A9B84A874B57',
 	width: 1000,
 	height: 810,
 	fps: 40,
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/Sensor_CO2_atlas_.png?1559817602930", id:"Sensor_CO2_atlas_"},
-		{src:"images/Sensor_CO2_atlas_2.png?1559817602930", id:"Sensor_CO2_atlas_2"},
-		{src:"images/Sensor_CO2_atlas_3.png?1559817602931", id:"Sensor_CO2_atlas_3"},
-		{src:"images/Sensor_CO2_atlas_4.png?1559817602932", id:"Sensor_CO2_atlas_4"}
+		{src:"images/Radiacion_atlas_.png?1559819952284", id:"Radiacion_atlas_"},
+		{src:"images/Radiacion_atlas_2.png?1559819952284", id:"Radiacion_atlas_2"},
+		{src:"images/Radiacion_atlas_3.png?1559819952285", id:"Radiacion_atlas_3"},
+		{src:"images/Radiacion_atlas_4.png?1559819952286", id:"Radiacion_atlas_4"}
 	],
 	preloads: []
 };
@@ -709,7 +728,7 @@ an.bootstrapCallback=function(fnCallback) {
 };
 
 an.compositions = an.compositions || {};
-an.compositions['C020EA473584F54FA0C85A62562A21AA'] = {
+an.compositions['E273292B2A50EB4AAD95A9B84A874B57'] = {
 	getStage: function() { return exportRoot.getStage(); },
 	getLibrary: function() { return lib; },
 	getSpriteSheet: function() { return ss; },
