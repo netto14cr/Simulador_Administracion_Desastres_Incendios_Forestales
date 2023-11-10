@@ -204,11 +204,17 @@ h1 {
 	height: 500px;
 	width: 100%;
 }
+
+
 .banner div.slide_caption {
-	background: rgba(0, 0, 0, 0.0);
-    max-width: 500px;
-    margin: 120px auto auto auto;
+    position: relative; /* Añade posición relativa para que la posición absoluta funcione correctamente */
+    background: rgba(13, 44, 45, 0.6);
+    max-width: 100%;
+    margin: 20px 20px 20px 20px; /* Ajusta el margen superior según sea necesario */
+    padding:30px; /* Añade un relleno para que el texto no toque los bordes de la pantalla */
+    box-sizing: border-box; /* Evita que el relleno afecte el ancho total */
 }
+
 .banner div.slide_caption h1 ,
 .banner div.slide_caption p {
 	text-align: center;
@@ -226,6 +232,8 @@ h1 {
 }
 .banner div.slide_caption p {
     font-size: 16px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 .templatemo_banner_slide_01 {
 	background-size: cover;

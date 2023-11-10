@@ -14,7 +14,7 @@ jQuery(function(){
     //main menu
     $("#templatemo_banner_menu ul").singlePageNav({offset: $('#templatemo_banner_menu').outerHeight()});
     //banner slide
-    $('.banner').unslider({ fluid: true, speed: 600, delay: 2000 });
+    $('.banner').unslider({ fluid: true, speed: 600, delay: 5000 });
     //Babber slider on scroll
     $(window).on("load scroll resize", function(){
         banner_height = ($(document).width()/1920) * 760;
